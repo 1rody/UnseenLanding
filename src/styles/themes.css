@@ -4,6 +4,7 @@
 
 @theme {
   --color-brand: #FFCAFC;
+  --color-accent: #e1acdf;
 
   --font-inter: var(--font-inter);
   --font-rubik: var(--font-rubik);
