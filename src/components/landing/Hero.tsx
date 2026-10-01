@@ -33,15 +33,15 @@ export default function Hero() {
             <Image className="relative z-10 top-30" alt="Sync"  width={30} height={30} src="/assets/SincBars.svg"/>
             <motion.div  initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{  duration: 0.8,  ease: "easeOut", }} className="relative z-20 text-center" >
                 <p className="text-3xl  sm:text-6xl md:text-7xl lg:text-8xl scale-95 font-inter hover:scale-102 duration-300 lg:-mb-5 text-brand">
-                    SYNC EVERITHING.
+                    SYNC EVERYTHING.
                 </p>
 
                 <h1 className="text-3xl  sm:text-6xl md:text-7xl lg:text-8xl hover:wiggle font-inter hover:scale-110 duration-300 font-black text-brand">
-                    SYNC EVERITHING.
+                    SYNC EVERYTHING.
                 </h1>
 
                 <p className="text-3xl  sm:text-6xl md:text-7xl lg:text-8xl scale-95 font-inter hover:scale-102 duration-300 lg:-mt-5 text-brand">
-                    SYNC EVERITHING.
+                    SYNC EVERYTHING.
                 </p>
                 <div className="mt-8 flex w-full items-center justify-center h-fit">
                     <Link href="#download" onClick={() => lenis?.scrollTo("#download")} className="hover:scale-105 active:rounded-4xl border border-brand text-white font-black font-inter lg:text-xl text-sm px-5 py-3 rounded-2xl transition-transform duration-200 active:scale-90 hover:bg-brand hover:text-black"  >
