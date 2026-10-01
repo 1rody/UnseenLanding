@@ -1,20 +1,20 @@
-
-
 @import "tailwindcss";
+@import "./globals.css";
 
 @theme {
-  --color-brand: #FFCAFC;
-  --color-accent: #e1acdf;
+    --color-brand: #FFCAFC;
+    --color-accent: #E1ACDF;
 
-  --font-inter: var(--font-inter);
-  --font-rubik: var(--font-rubik);
+    --font-inter: var(--font-inter);
+    --font-rubik: var(--font-rubik);
 }
 
 :root {
     --background: #070709;
     --brand: #FFCAFC;
 }
+
 body {
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
 }

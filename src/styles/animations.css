@@ -1,0 +1,531 @@
+.crt {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  animation: crt-flicker 0.12s infinite steps(2);
+}
+
+.crt::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgb(0 0 0 / 0.14) 3px,
+    rgb(0 0 0 / 0.14) 4px
+  );
+
+  animation: crt-scanlines 0.1s linear infinite;
+}
+
+.crt::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      rgb(0 0 0 / 0.15) 75%,
+      rgb(0 0 0 / 0.55) 100%
+    );
+
+  animation: crt-breathe 4s ease-in-out infinite;
+}
+
+@keyframes crt-scanlines {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes crt-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.985;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.99;
+  }
+}
+
+@keyframes crt-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.015);
+  }
+}
+
+
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    perspective: 180px;
+    perspective-origin: center;
+
+    transform-style: preserve-3d;
+}
+
+.particle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: var(--size);
+    height: var(--size);
+
+    border-radius: 999px;
+
+    background: var(--brand);
+
+    box-shadow:
+        0 0 8px var(--brand),
+        0 0 20px rgb(255 202 252 / 0.65),
+        0 0 40px rgb(255 202 252 / 0.25);
+
+    transform-style: preserve-3d;
+
+    animation:
+        particle-travel var(--duration) linear infinite;
+    
+    animation-delay: var(--delay);
+}
+
+@keyframes particle-travel {
+    0% {
+        transform:
+            translate3d(
+                var(--start-x),
+                var(--start-y),
+                -1200px
+            )
+            scale(0.05);
+
+        opacity: 0;
+    }
+
+    8% {
+        opacity: var(--opacity);
+    }
+
+    45% {
+        opacity: var(--opacity);
+    }
+
+    75% {
+        opacity: calc(var(--opacity) * 0.85);
+    }
+
+    100% {
+        transform:
+            translate3d(
+                var(--end-x),
+                var(--end-y),
+                800px
+            )
+            scale(var(--scale));
+
+        opacity: 0;
+    }
+}
+
+.particle-01 {
+    --start-x: -40vw;
+    --start-y: -30vh;
+    --end-x: -100vw;
+    --end-y: -75vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.3s;
+    --delay: -0.2s;
+    --opacity: 0.65;
+}
+
+.particle-02 {
+    --start-x: 30vw;
+    --start-y: -25vh;
+    --end-x: 75vw;
+    --end-y: -70vh;
+    --size: 3px;
+    --scale: 7;
+    --duration: 1.8s;
+    --delay: -1.1s;
+    --opacity: 0.8;
+}
+
+.particle-03 {
+    --start-x: -25vw;
+    --start-y: 20vh;
+    --end-x: -80vw;
+    --end-y: 65vh;
+    --size: 2px;
+    --scale: 4;
+    --duration: 1s;
+    --delay: -0.6s;
+    --opacity: 0.55;
+}
+
+.particle-04 {
+    --start-x: 40vw;
+    --start-y: 30vh;
+    --end-x: 110vw;
+    --end-y: 80vh;
+    --size: 4px;
+    --scale: 8;
+    --duration: 2.1s;
+    --delay: -1.7s;
+    --opacity: 0.85;
+}
+
+.particle-05 {
+    --start-x: -55vw;
+    --start-y: 5vh;
+    --end-x: -120vw;
+    --end-y: 15vh;
+    --size: 2px;
+    --scale: 6;
+    --duration: 1.5s;
+    --delay: -0.9s;
+    --opacity: 0.7;
+}
+
+.particle-06 {
+    --start-x: 55vw;
+    --start-y: -10vh;
+    --end-x: 120vw;
+    --end-y: -25vh;
+    --size: 3px;
+    --scale: 6;
+    --duration: 1.2s;
+    --delay: -0.3s;
+    --opacity: 0.75;
+}
+
+.particle-07 {
+    --start-x: -15vw;
+    --start-y: -45vh;
+    --end-x: -35vw;
+    --end-y: -110vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.7s;
+    --delay: -1.4s;
+    --opacity: 0.6;
+}
+
+.particle-08 {
+    --start-x: 15vw;
+    --start-y: 45vh;
+    --end-x: 35vw;
+    --end-y: 110vh;
+    --size: 3px;
+    --scale: 7;
+    --duration: 1.4s;
+    --delay: -0.8s;
+    --opacity: 0.8;
+}
+
+.particle-09 {
+    --start-x: -65vw;
+    --start-y: -35vh;
+    --end-x: -130vw;
+    --end-y: -65vh;
+    --size: 4px;
+    --scale: 9;
+    --duration: 2.4s;
+    --delay: -2s;
+    --opacity: 0.9;
+}
+
+.particle-10 {
+    --start-x: 65vw;
+    --start-y: 35vh;
+    --end-x: 130vw;
+    --end-y: 70vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.1s;
+    --delay: -0.4s;
+    --opacity: 0.65;
+}
+
+.particle-11 {
+    --start-x: -50vw;
+    --start-y: 40vh;
+    --end-x: -100vw;
+    --end-y: 100vh;
+    --size: 3px;
+    --scale: 7;
+    --duration: 1.9s;
+    --delay: -1.3s;
+    --opacity: 0.75;
+}
+
+.particle-12 {
+    --start-x: 50vw;
+    --start-y: -40vh;
+    --end-x: 100vw;
+    --end-y: -100vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.25s;
+    --delay: -0.7s;
+    --opacity: 0.6;
+}
+
+.particle-13 {
+    --start-x: -20vw;
+    --start-y: 10vh;
+    --end-x: -55vw;
+    --end-y: 35vh;
+    --size: 5px;
+    --scale: 10;
+    --duration: 2.2s;
+    --delay: -1.8s;
+    --opacity: 0.9;
+}
+
+.particle-14 {
+    --start-x: 25vw;
+    --start-y: -5vh;
+    --end-x: 65vw;
+    --end-y: -15vh;
+    --size: 2px;
+    --scale: 4;
+    --duration: 0.9s;
+    --delay: -0.35s;
+    --opacity: 0.55;
+}
+
+.particle-15 {
+    --start-x: -10vw;
+    --start-y: 35vh;
+    --end-x: -25vw;
+    --end-y: 90vh;
+    --size: 3px;
+    --scale: 8;
+    --duration: 1.6s;
+    --delay: -1s;
+    --opacity: 0.8;
+}
+
+.particle-16 {
+    --start-x: 10vw;
+    --start-y: -35vh;
+    --end-x: 25vw;
+    --end-y: -90vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.05s;
+    --delay: -0.5s;
+    --opacity: 0.65;
+}
+
+.particle-17 {
+    --start-x: -70vw;
+    --start-y: 25vh;
+    --end-x: -140vw;
+    --end-y: 55vh;
+    --size: 3px;
+    --scale: 8;
+    --duration: 2.5s;
+    --delay: -2.2s;
+    --opacity: 0.85;
+}
+
+.particle-18 {
+    --start-x: 70vw;
+    --start-y: -25vh;
+    --end-x: 140vw;
+    --end-y: -55vh;
+    --size: 4px;
+    --scale: 10;
+    --duration: 2s;
+    --delay: -1.5s;
+    --opacity: 0.9;
+}
+
+.particle-19 {
+    --start-x: -35vw;
+    --start-y: -10vh;
+    --end-x: -90vw;
+    --end-y: -30vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.35s;
+    --delay: -0.25s;
+    --opacity: 0.6;
+}
+
+.particle-20 {
+    --start-x: 30vw;
+    --start-y: 15vh;
+    --end-x: 85vw;
+    --end-y: 45vh;
+    --size: 3px;
+    --scale: 7;
+    --duration: 1.75s;
+    --delay: -1.25s;
+    --opacity: 0.75;
+}
+
+.particle-21 {
+    --start-x: -5vw;
+    --start-y: -20vh;
+    --end-x: -15vw;
+    --end-y: -70vh;
+    --size: 4px;
+    --scale: 9;
+    --duration: 1.15s;
+    --delay: -0.45s;
+    --opacity: 0.85;
+}
+
+.particle-22 {
+    --start-x: 5vw;
+    --start-y: 20vh;
+    --end-x: 15vw;
+    --end-y: 70vh;
+    --size: 2px;
+    --scale: 5;
+    --duration: 1.45s;
+    --delay: -0.95s;
+    --opacity: 0.65;
+}
+
+.particle-23 {
+    --start-x: -45vw;
+    --start-y: 50vh;
+    --end-x: -90vw;
+    --end-y: 120vh;
+    --size: 3px;
+    --scale: 8;
+    --duration: 2.3s;
+    --delay: -1.9s;
+    --opacity: 0.8;
+}
+
+.particle-24 {
+    --start-x: 45vw;
+    --start-y: -50vh;
+    --end-x: 90vw;
+    --end-y: -120vh;
+    --size: 4px;
+    --scale: 10;
+    --duration: 1.9s;
+    --delay: -1.05s;
+    --opacity: 0.9;
+}
+
+.particle-25 {
+    --start-x: -75vw;
+    --start-y: -5vh;
+    --end-x: -150vw;
+    --end-y: -10vh;
+    --size: 2px;
+    --scale: 6;
+    --duration: 1.05s;
+    --delay: -0.15s;
+    --opacity: 0.65;
+}
+
+.particle-26 {
+    --start-x: 75vw;
+    --start-y: 5vh;
+    --end-x: 150vw;
+    --end-y: 10vh;
+    --size: 3px;
+    --scale: 8;
+    --duration: 1.3s;
+    --delay: -0.75s;
+    --opacity: 0.8;
+}
+
+.particle-27 {
+    --start-x: -25vw;
+    --start-y: -55vh;
+    --end-x: -50vw;
+    --end-y: -130vh;
+    --size: 3px;
+    --scale: 8;
+    --duration: 2.05s;
+    --delay: -1.65s;
+    --opacity: 0.75;
+}
+
+.particle-28 {
+    --start-x: 25vw;
+    --start-y: 55vh;
+    --end-x: 50vw;
+    --end-y: 130vh;
+    --size: 2px;
+    --scale: 6;
+    --duration: 1.55s;
+    --delay: -0.55s;
+    --opacity: 0.7;
+}
+
+.particle-29 {
+    --start-x: -60vw;
+    --start-y: -50vh;
+    --end-x: -125vw;
+    --end-y: -105vh;
+    --size: 5px;
+    --scale: 12;
+    --duration: 2.7s;
+    --delay: -2.35s;
+    --opacity: 0.9;
+}
+
+.particle-30 {
+    --start-x: 60vw;
+    --start-y: 50vh;
+    --end-x: 125vw;
+    --end-y: 105vh;
+    --size: 3px;
+    --scale: 9;
+    --duration: 2.15s;
+    --delay: -1.75s;
+    --opacity: 0.85;
+}
+
+.wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}

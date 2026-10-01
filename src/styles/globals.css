@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./themes.css";
+
 
 .no-select {
     -moz-user-select: none;
