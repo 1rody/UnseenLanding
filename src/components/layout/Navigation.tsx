@@ -28,13 +28,15 @@ export default function Navigation() {
             <nav className="w-full p-4 sm:p-5 lg:w-fit">
                 <ol className="flex items-center justify-center gap-2 text-sm font-black sm:gap-3 sm:text-base lg:gap-5 lg:text-2xl">
                     <li className="rounded-2xl bg-brand px-3 py-2 text-black duration-200 sm:px-4 lg:px-5">
-                        <Link href="/">GITHUB</Link>
+                        <Link href="https://github.com/1rody/UnseenTools" target="_blank" rel="noopener noreferrer">
+                            GITHUB
+                        </Link>
                     </li>
                     <li className="rounded-4xl px-3 py-2 duration-200 hover:rounded-2xl text-white hover:bg-brand hover:text-black sm:px-4 lg:px-5">
-                        <Link href="/">ABOUT</Link>
+                        <Link href="#about">ABOUT</Link>
                     </li>
                     <li className="rounded-4xl px-3 py-2 duration-200 hover:rounded-2xl text-white hover:bg-brand hover:text-black sm:px-4 lg:px-5">
-                        <Link href="/">DOWNLOAD</Link>
+                        <Link href="#download">DOWNLOAD</Link>
                     </li>
                 </ol>
             </nav>
