@@ -19,8 +19,8 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "UNSEEN - AN UNIFIED APPLICATION",
-  description: "Made with love by devs for everyone",
+  title: "UNSEEN - Discover your new perspective",
+  description: "AN UNIFIED OCEAN OF APPS THAT YOU ALREADY USE IN ONE PLACE",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
